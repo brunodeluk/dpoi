@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">Firstname</th>
+                <th rowspan="2">Lastname</th>
+                <th rowspan="2">Mail</th>
+                <th rowspan="2">Phone</th>
+                <th colspan="3">Actions</th>
+            </tr>
+            <tr>
+                <th>Viwe</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>📃</td>
+                <td>✏</td>
+                <td>❌</td>
+            </tr>
+        </tbody>
+    </table>
+    <H3>New user</H3>
+    <form>
+        <h4>User details</h4>
+        <div>
+            <label>
+                Name
+                <input type="text" name="name" id="name" placeholder="Jon"/>
+            </label>
+        </div>
+        <div>
+            <label>
+                Lastname
+                <input type="text" name="lastname" id="lastname" placeholder="Snow"/>
+            </label>
+        </div>
+        <div>
+            <label>
+                Email
+                <input type="email" name="email" id="email" placeholder="jonsnow@winterfell.com"/>
+            </label>
+        </div>
+        <div>
+            <label>
+                Phone
+                <input type="tel" name="phone" id="phone" placeholder="18368125883"/>
+            </label>
+        </div>
+        <h4>Address</h4>
+        <div>
+            <label>
+                Street
+                <input type="text" name="street" id="street" placeholder="Av. mariano acosta 6140"/>
+            </label>
+        </div>
+        <div>
+            <label>
+                State
+                <input type="text" name="state" id="state" placeholder="Winterfell"/>
+            </label>
+        </div>
+        <div>
+            <label>
+                ZIP Code
+                <input type="text" name="street" id="street" placeholder="1640"/>
+            </label>
+        </div>
+        <h4>Other details</h4>
+        <div>
+            <label>
+                Birth date
+                <input type="text" name="street" id="street" placeholder="01/01/1970" maxlength="10"/>
+            </label>
+        </div>
+        <div>
+            <label>Marrital State</label>
+            <div>
+                <label>
+                    <input type="radio" name="marital" id="married" value="1"/>
+                    Married
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="radio" name="marital" id="single" value="0"/>
+                    Single
+                </label>
+            </div>
+        </div>
+        <div>
+            <label>
+                Profile pic
+                <input type="file" name="profile" id="profile" />
+            </label>
+        </div>
+        <div>
+            <label>
+                Comment
+                <textarea placeholder="This site is awesome" rows="5"></textarea>
+            </label>
+        </div>
+        <div>
+            <input type="submit" value="Subimt"/>
+            <input type="button" value="Cancel">
+        </div>
+    </form>
+</body>
+</html>
