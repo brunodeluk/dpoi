@@ -5,44 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TP1</title>
+    <link href="theme.css" type="text/css" rel="stylesheet">
+    <link href="print.css" type="text/css" rel="stylesheet" media="print">
+    <link href="horizontal.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <h3>Lists</h3>
-    <ul>
-        <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/styles">CSS (16/03/2018)</a></li>
-        <ul>
-            <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/js">JS (23/03/2018)</a></li>
-            <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/js++">JS++ (23/03/2018)</a></li>
-        </ul>
-        <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/scrapping">Scrapping (06/04/2018)</a></li>
-        <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/restapi">RestApi (13/04/2018)</a></li>
-        <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/visualization">Visualization (skip)</a></li>
-        <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/serverless">Serverless (20/04/2018)</a></li>
-        <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/papoy">Batalla Naval (04/05/2018)</a></li>
-    </ul>
-
-    <h3>Why you should not use <code><&zwj;br /></code></h3>
-    La principal razon por la que no se usa el tag de <code><&zwj;br /></code> es porque, al igual que ya no se utilizan los tags de <code><&zwj;table></code> para definir la estructura de una pagina, tampoco se deben utilizar los tags de <code><&zwj;br /></code> para definir diferentes secciones o parrafos. Con la introducción del CSS, los estilos ya no se definen usando tags de codesentación (es mas, muchos ya estan decodecados). 
-
-    <h3>Definition list</h3>
-
-    <dl>
-        <dt>URI</dt>
-        <dl>Una URI es una cadena de caracteres que identifica un recurso abstracto o físico.</dl>
-        <dl><code><&zwj;scheme>:<&zwj;scheme-specific-part></code></dl>
-        <dl><code><&zwj;scheme>://<&zwj;authority><&zwj;path>?<&zwj;query></code></dl>
-        
-        <dt>URl</dt>
-        <dl>La diferencia respecto a un localizador de recursos uniforme (URL) es que estos últimos hacen referencia a recursos que, de forma general, pueden variar en el tiempo.</dl>
-        
-        <dt>HTML</dt>
-        <dl>Es un protocolo de nivel de aplicación utilizado para cargar recursos. Esta orientado a documentos y es un procolo "stateless"</dl>
-        
-        <dt>XHTML</dt>
-        <dl>XHTML es básicamente HTML excodesado como XML válido. Es más estricto a nivel técnico, pero esto permite que posteriormente sea más fácil al hacer cambios o buscar errores entre otros.</dl>
-        
-        <dt>CSS</dt>
-        <dl>CSS es el lenguaje utilizado para describir la codesentación de documentos HTML o XML.</dl>
-    </dl>
+    <nav>
+        <h3>TP1 DPOI</h3>    
+    </nav>
+    <main>
+        <div class="left">
+            <ul>
+                <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/styles">CSS (16/03/2018)</a></li>
+                <ul>
+                    <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/js">JS (23/03/2018)</a></li>
+                    <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/js++">JS++ (23/03/2018)</a></li>
+                </ul>
+                <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/scrapping">Scrapping (06/04/2018)</a></li>
+                <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/restapi">RestApi (13/04/2018)</a></li>
+                <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/visualization">Visualization (skip)</a></li>
+                <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/serverless">Serverless (20/04/2018)</a></li>
+                <li><a href="https://facultaddeingenieria.github.io/dpoi/practice/papoy">Batalla Naval (04/05/2018)</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <div>
+                <h3>Why you should not use <code><&zwj;br /></code></h3>
+                La principal razon por la que no se usa el tag de <code><&zwj;br /></code> es porque, al igual que ya no se utilizan los tags de <code><&zwj;table></code> para definir la estructura de una pagina, tampoco se deben utilizar los tags de <code><&zwj;br /></code> para definir diferentes secciones o parrafos. Con la introducción del CSS, los estilos ya no se definen usando tags de codesentación (es mas, muchos ya estan decodecados). 
+            </div>
+    
+            <dl>
+                <dt>URI</dt>
+                <dl>Una URI es una cadena de caracteres que identifica un recurso abstracto o físico.</dl>
+                <dl><code><&zwj;scheme>:<&zwj;scheme-specific-part></code></dl>
+                <dl><code><&zwj;scheme>://<&zwj;authority><&zwj;path>?<&zwj;query></code></dl>
+                
+                <dt>URl</dt>
+                <dl>La diferencia respecto a un localizador de recursos uniforme (URL) es que estos últimos hacen referencia a recursos que, de forma general, pueden variar en el tiempo.</dl>
+                
+                <dt>HTML</dt>
+                <dl>Es un protocolo de nivel de aplicación utilizado para cargar recursos. Esta orientado a documentos y es un procolo "stateless"</dl>
+                
+                <dt>XHTML</dt>
+                <dl>XHTML es básicamente HTML excodesado como XML válido. Es más estricto a nivel técnico, pero esto permite que posteriormente sea más fácil al hacer cambios o buscar errores entre otros.</dl>
+                
+                <dt>CSS</dt>
+                <dl>CSS es el lenguaje utilizado para describir la codesentación de documentos HTML o XML.</dl>
+            </dl>
+        </div>
+    </main>
+    <footer>
+        Student: Bruno De Luca
+    </footer>
 </body>
 </html>

@@ -1,0 +1,22 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+nav, footer, main > div {
+    border: 2px solid black;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    flex: 0.5;
+}
+
+.right {
+    flex: 1.5;
+}
