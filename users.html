@@ -6,129 +6,121 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Users</title>
     <link href="theme.css" type="text/css" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
     <link href="print.css" type="text/css" rel="stylesheet" media="print">
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th rowspan="2">Firstname</th>
-                <th rowspan="2">Lastname</th>
-                <th rowspan="2">Mail</th>
-                <th rowspan="2">Phone</th>
-                <th colspan="3">Actions</th>
-            </tr>
-            <tr>
-                <th>Viwe</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Pedro</td>
-                <td>Colunga</td>
-                <td>xx@yy.com</td>
-                <td>1153107654</td>
-                <td>📃</td>
-                <td>✏</td>
-                <td>❌</td>
-            </tr>
-            <tr>
-                <td>Aguntin</td>
-                <td>López Gabeiras</td>
-                <td>yy@xx.com</td>
-                <td>1153107654</td>
-                <td>📃</td>
-                <td>✏</td>
-                <td>❌</td>
-            </tr>
-        </tbody>
-    </table>
-    <H3>New user</H3>
-    <form>
-        <h4>User details</h4>
-        <div>
-            <label>
-                Name
-                <input type="text" name="name" id="name" placeholder="Jon"/>
-            </label>
+    <nav>
+
+    </nav>
+    <main>
+        <div class="left">
+            <ul>
+                <li><a href="#users">Users</a></li>
+                <ul>
+                    <li><a href="#add-users">Add User</a></li>
+                </ul>
+            </ul>
         </div>
-        <div>
-            <label>
-                Lastname
-                <input type="text" name="lastname" id="lastname" placeholder="Snow"/>
-            </label>
+        <div class="right">
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2">Firstname</th>
+                        <th rowspan="2">Lastname</th>
+                        <th rowspan="2">Mail</th>
+                        <th rowspan="2">Phone</th>
+                        <th colspan="3">Actions</th>
+                    </tr>
+                    <tr>
+                        <th>Viwe</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pedro</td>
+                        <td>Colunga</td>
+                        <td>xx@yy.com</td>
+                        <td>1153107654</td>
+                        <td>📃</td>
+                        <td>✏</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Aguntin</td>
+                        <td>López Gabeiras</td>
+                        <td>yy@xx.com</td>
+                        <td>1153107654</td>
+                        <td>📃</td>
+                        <td>✏</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+            <H3>New user</H3>
+            <form>
+                <h4>User details</h4>
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Jon"/>
+                </div>
+                <div>
+                    <label for="lastname">Lastname</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Snow"/>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="jonsnow@winterfell.com"/>
+                </div>
+                <div>
+                    <label for="phone">Phone</label>
+                    <input type="tel" name="phone" id="phone" placeholder="18368125883"/>
+                </div>
+                <h4>Address</h4>
+                <div>
+                    <label for="street">Street</label>
+                    <input type="text" name="street" id="street" placeholder="Av. mariano acosta 6140"/>
+                </div>
+                <div>
+                    <label for="state">State</label>
+                    <input type="text" name="state" id="state" placeholder="Winterfell"/>
+                </div>
+                <div>
+                    <label for="zipcode">ZIP Code</label>
+                    <input type="text" name="zipcode" id="zipcode" placeholder="1640"/>
+                </div>
+                <h4>Other details</h4>
+                <div>
+                    <label for="birthdate">Birth date</label>
+                    <input type="text" name="birthdate" id="birthdate" placeholder="01/01/1970" maxlength="10"/>
+                </div>
+                <div>
+                    <label>Marrital State</label>
+                    <div>
+                        <label for="married">Married</label>
+                        <input type="radio" name="marrital" id="married" value="1"/>
+                    </div>
+                    <div>
+                        <label for="single">Single</label>
+                        <input type="radio" name="marrital" id="single" value="0"/>
+                    </div>
+                </div>
+                <div>
+                    <label for="profile">Profile pic</label>
+                    <input type="file" name="profile" id="profile" />
+                </div>
+                <div>
+                    <label for="comment">Comment</label>
+                    <textarea name="comment" id="comment" placeholder="This site is awesome" rows="5"></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Subimt"/>
+                    <input type="button" value="Cancel">
+                </div>
+            </form>
         </div>
-        <div>
-            <label>
-                Email
-                <input type="email" name="email" id="email" placeholder="jonsnow@winterfell.com"/>
-            </label>
-        </div>
-        <div>
-            <label>
-                Phone
-                <input type="tel" name="phone" id="phone" placeholder="18368125883"/>
-            </label>
-        </div>
-        <h4>Address</h4>
-        <div>
-            <label>
-                Street
-                <input type="text" name="street" id="street" placeholder="Av. mariano acosta 6140"/>
-            </label>
-        </div>
-        <div>
-            <label>
-                State
-                <input type="text" name="state" id="state" placeholder="Winterfell"/>
-            </label>
-        </div>
-        <div>
-            <label>
-                ZIP Code
-                <input type="text" name="street" id="street" placeholder="1640"/>
-            </label>
-        </div>
-        <h4>Other details</h4>
-        <div>
-            <label>
-                Birth date
-                <input type="text" name="street" id="street" placeholder="01/01/1970" maxlength="10"/>
-            </label>
-        </div>
-        <div>
-            <label>Marrital State</label>
-            <div>
-                <label>
-                    <input type="radio" name="marital" id="married" value="1"/>
-                    Married
-                </label>
-            </div>
-            <div>
-                <label>
-                    <input type="radio" name="marital" id="single" value="0"/>
-                    Single
-                </label>
-            </div>
-        </div>
-        <div>
-            <label>
-                Profile pic
-                <input type="file" name="profile" id="profile" />
-            </label>
-        </div>
-        <div>
-            <label>
-                Comment
-                <textarea placeholder="This site is awesome" rows="5"></textarea>
-            </label>
-        </div>
-        <div>
-            <input type="submit" value="Subimt"/>
-            <input type="button" value="Cancel">
-        </div>
-    </form>
+    </main>
 </body>
 </html>
