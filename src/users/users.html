@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Users</title>
-        <link href="theme.css" type="text/css" rel="stylesheet">
+        <link href="../styles/theme.css" type="text/css" rel="stylesheet">
         <link href="style.css" type="text/css" rel="stylesheet">
-        <link href="print.css" type="text/css" rel="stylesheet" media="print">
+        <link href="../styles/print.css" type="text/css" rel="stylesheet" media="print">
     </head>
     <body>
         <header>
@@ -23,7 +23,9 @@
         </nav>
         <main>
             <section>
-                <table>
+                <div id="loading" class="loading">Loading...</div>
+                <div id="users_table_error_message" class="errorMessage"></div>
+                <table id="users_table">
                     <thead>
                         <tr>
                             <th rowspan="2">Firstname</th>
@@ -38,25 +40,7 @@
                             <th>Delete</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Pedro</td>
-                            <td>Colunga</td>
-                            <td>xx@yy.com</td>
-                            <td>1153107654</td>
-                            <td>📃</td>
-                            <td>✏</td>
-                            <td>❌</td>
-                        </tr>
-                        <tr>
-                            <td>Aguntin</td>
-                            <td>López Gabeiras</td>
-                            <td>yy@xx.com</td>
-                            <td>1153107654</td>
-                            <td>📃</td>
-                            <td>✏</td>
-                            <td>❌</td>
-                        </tr>
+                    <tbody id="users_table_body">
                     </tbody>
                 </table>
             </section>
@@ -128,5 +112,7 @@
         <footer>
             <span>DPOI 2020 - Universidad Austral - Bruno De Luca</span>
         </footer>
+        <script src="../services/api.js" type="text/javascript"></script>
+        <script src="users.js" type="text/javascript"></script>
     </body>
 </html>

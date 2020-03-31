@@ -1,0 +1,4 @@
+.loading, .errorMessage {
+    display: none;
+    text-align: center;
+}
