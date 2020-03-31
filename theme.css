@@ -1,49 +1,161 @@
+/* 
+* Theme de la web 
+*/
+
+/* variables */
+
+:root {
+    --background-app: white;
+    --background-secondary: #E7EDF3;
+    --background-dark: #DFE7E9;
+    --primary: #357DF9;
+    --primary-medium: #1A58A4;
+    --primary-dark: #162D54;
+    --secondary: #687793;
+    --secondary-light: #98A2B3;
+    --secondary-x-light: rgb(219, 220, 221);
+    --accent: #FE6E4F;
+    --over-primary: white;
+    --input-background: #F8F9FB;
+    --text-color: #2A2E3A;
+    --subtitle-color: #6F738C;
+    --error: red;
+}
+
 html, body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	font-family: Helvetica, Arial , sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-size: 1rem;
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--background-app);
+    overflow: auto;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
 }
 
 h3 {
-	font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 h4 {
-	color: rgb(60, 106, 255);
+    font-size: 1rem;
+    color: var(--subtitle-color);
 }
 
-input[type="button"], input[type="submit"] {
-	padding: 10px 16px;
-	border-radius: 5px;
-	background-color: rgb(45, 129, 255);
-	color: white;
-	text-transform: uppercase;
-	border: 0;
-	outline: none;
-	cursor: pointer;
+html, body,
+input[type="text"], 
+input[type="email"],
+input[type="tel"],
+textarea {
+    font-family: Helvetica, Arial, sans-serif;
 }
 
-input[type="button"]:hover, input[type="submit"]:hover {
-	background-color: rgb(16, 112, 255);
+input[type="button"], 
+input[type="submit"], 
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+table {
+    border-radius: 0.4rem;
 }
 
-input[type="button"]:active, input[type="submit"]:active {
-	background-color: rgb(1, 84, 207);
+input[type="button"], 
+input[type="submit"] {
+    padding: 0.6rem 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.021rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: 2px solid;
+    cursor: pointer;
+    outline: none;
 }
 
-input[type="text"], input[type="email"], input[type="tel"], textarea {
-	font-family: Helvetica, Arial, sans-serif;
-	padding: 8px;
-	border: 2px solid #ccc;
-	border-radius: 5px;
-	outline: none;
+.btn-primary {
+    border-color: var(--primary);
+    background-color: var(--primary);
+    color: var(--over-primary);
 }
 
-input[type="text"]:hover, input[type="email"]:hover, input[type="tel"]:hover, textarea:hover {
-	border-color: #aaa;
+.btn-primary:hover {
+    background-color: var(--primary-medium);
 }
 
-input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus {
-	border-color: rgb(16, 112, 255);
+.btn-secondary {
+    border-color: var(--primary);
+    background-color: var(--background-app);
+    color: var(--primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--background-secondary);
+}
+
+input[type="text"], 
+input[type="email"],
+input[type="tel"],
+textarea {
+    outline: none;
+    border: 1px solid var(--secondary-x-light);
+    background-color: var(--input-background);
+    line-height: 1.5;
+    padding: 0.4rem 1rem;
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    border-color: var(--primary);
+    background-color: var(--background-app);
+}
+
+label {
+    font-weight: bold;
+}
+
+footer {
+    padding: 3rem 1.2rem;
+    background-color: var(--primary-dark);
+    color: var(--over-primary);
+}
+
+section {
+    margin: 1.2rem;
+    padding: 1rem;
+}
+
+table {
+    width: 100%;
+    border: 1px solid;
+    border-spacing: 0;
+    overflow: hidden;
+    text-align: left;
+}
+
+table, table td {
+    border-color: var(--secondary-x-light);
+}
+
+table thead, tbody > tr:nth-child(even) {
+    background-color: var(--background-secondary);
+}
+
+table td {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+}
+
+table th {
+    vertical-align: bottom;
+}
+
+table td, table th {
+    padding: 1rem;
 }
