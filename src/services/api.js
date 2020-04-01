@@ -1,4 +1,4 @@
-const CREDENTIALS = 'dpoi';
+const CREDENTIALS = 'brunod';
 const BASE_URL = 'http://dpoi2012api.appspot.com/api/1.0';
 
 function customFetch(endpoint, method = 'GET', body = undefined) {
