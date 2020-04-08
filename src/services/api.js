@@ -28,6 +28,7 @@ function customFetch(endpoint, method = 'GET', body = undefined) {
 }
 
 const listUsers = () => customFetch(`/list?credential=${CREDENTIALS}`);
+const listUsersWithDelay = () => customFetch(`/list_delay?credential=${CREDENTIALS}`);
 const getUser = (id) => customFetch('/user');
 const saveUser = (user) => customFetch(`/create?credential=${CREDENTIALS}&` + user, 'POST');
 const deleteUser = (id) => customFetch(`/delete?credential=${CREDENTIALS}&id=${id}`, 'POST');

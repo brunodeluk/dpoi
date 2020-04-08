@@ -3,18 +3,22 @@
 async function onInit() {
     
     try {
+        showLoading();
         showTable(false);
         const users = await fetchUsers();
         populateTable(users);
-        showTable(true);
+        showTable();
     }
     catch (e) {
         displayError(e?.message || "Could not fetch users, please try again later.");
     }
+    finally {
+        showLoading(false);
+    }
 }
 
 function fetchUsers() {
-    return listUsers()
+    return listUsersWithDelay()
         .then(payload => {
             return payload.items.map(user => new User(user));
         });
@@ -26,12 +30,12 @@ function displayError(error) {
     alertBoxRef.style.display = 'block';
 }
 
-function showLoading(isLoading) {
+function showLoading(isLoading = true) {
     const loadingRef = document.getElementById('loading');
     loadingRef.style.display = isLoading ? 'block' : 'none';
 }
 
-function showTable(status) {
+function showTable(status = true) {
     const usersTableRef = document.getElementById('users_table');
     usersTableRef.style.display = status ? 'table' : 'none';
 }
