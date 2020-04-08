@@ -1,20 +1,29 @@
+function HTTPMiddleware(req, res) {
+    this.requestCallback = req;
+    this.responseCallback = res;    
+}
+
 function Interceptor() {
-    this.requestCallback = undefined;
-    this.responseCallback = undefined;    
+    this.interceptors = [];
 }
 
 Interceptor.prototype = {
-    onRequestCallback: function(callback) {
-        this.requestCallback = callback;
+    register: function(o) {
+        this.interceptors.push(o);
     },
-    onResponseCallback: function(callback) {
-        this.responseCallback = callback;
+    unregister: function(o) {
+        const index = this.interceptors.indexOf(o);
+        if (index !== -1) this.interceptors = [...this.interceptors.slice(index), ...this.interceptors.slice(index + 1)];
     },
     onRequest: function(o) {
-        this.requestCallback(o);
+        this.interceptors.forEach(i => {
+            i.requestCallback(o);
+        })
     },
     onResponse: function(o) {
-        this.responseCallback(o);
+        this.interceptors.forEach(i => {
+            i.responseCallback(o);
+        });
     }
 }
 

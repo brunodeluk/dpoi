@@ -1,12 +1,10 @@
-
-
 async function onInit() {
     
     try {
         showLoading();
         showTable(false);
         const users = await fetchUsers();
-        populateTable(users);
+        users.forEach(appendUserToTable);
         showTable();
     }
     catch (e) {
@@ -18,11 +16,10 @@ async function onInit() {
 }
 
 function fetchUsers() {
-    return listUsersWithDelay()
-        .then(payload => {
-            return payload.items.map(user => new User(user));
-        });
+    return listUsers().then(payload => payload.items.map(user => new User(user)));
 }
+
+// Este display error se podria sacar un archivo que cree un alert dialog en algun lado
 
 function displayError(error) {
     const alertBoxRef = document.getElementById('users_table_error_message');
@@ -40,32 +37,32 @@ function showTable(status = true) {
     usersTableRef.style.display = status ? 'table' : 'none';
 }
 
-function populateTable(users) {
-    const tableBodyRef = document.getElementById('users_table_body');
-    users.forEach(user => {
-        const rowRef = document.createElement('tr');
-        addCell(rowRef, user.name);
-        addCell(rowRef, user.lastname);
-        addCell(rowRef, user.email);
-        addCell(rowRef, user.phone);
-        addCell(rowRef, '📃');
-        addCell(rowRef, '✏');
-        addCell(rowRef, '❌').onclick = () => deleteUser(user.id);
-        tableBodyRef.appendChild(rowRef);
-    });
-    
+// se podria sacar esto a una clase que se encarge de renderizar una tabla
+// en en un placeholder
+
+function appendUserToTable(user) {
+    const tableRef = document
+        .getElementById('users_table')
+        .getElementsByTagName('tbody')[0];
+
+    const rowRef = tableRef.insertRow();
+    addCell(0, rowRef, user.name);
+    addCell(1, rowRef, user.lastname);
+    addCell(2, rowRef, user.email);
+    addCell(3, rowRef, user.phone);
+    addCell(4, rowRef, '📃');
+    addCell(5, rowRef, '✏').onclick = () => handleOnEdit(user.id);
+    addCell(6, rowRef, '❌').onclick = () => deleteUser(user.id);
 }
 
-function addCell(parent, value) {
-    const columnRef = document.createElement('td');
-    columnRef.innerHTML = value;
-    parent.appendChild(columnRef);
-    return columnRef;
+function addCell(index, rowRef, value) {
+    const newCell = rowRef.insertCell(index);
+    const text = document.createTextNode(value);
+    newCell.appendChild(text);
+    return newCell;
 }
 
-function resetTable() {
-    document.getElementById('users_table_body').innerHTML = null;
-}
+let isUpdating = false;
 
 // new user
 
@@ -82,12 +79,26 @@ function handleOnSubmit(e) {
     }
 
     const user = new URLSearchParams(preUser).toString();
-    saveUser(user)
-        .then(async () => {
-            const users = await fetchUsers();
-            resetTable();
-            populateTable(users);
-        })
+    const action = isUpdating ? updateUser(preUser.id, user) : saveUser(user);
+    action
+        .then(res => appendUserToTable(new User(res)))
         .catch(err => console.error(err));
+    isUpdating = false;
+}
+
+// edit
+
+// esta variable tiene que volar
+// es solamente hsata que hagamos mas de una pagina
+
+async function handleOnEdit(userId) {
+    isUpdating = true;
+    const formRef = document.getElementsByTagName('form')[0];
+    const user = await getUser(userId);
+    
+    for (let i = 0; i < formRef.elements.length - 2; i++) {
+        const element = formRef.elements[formRef.elements[i].name];
+        element.value = user[formRef.elements[i].name];
+    }
 }
 
