@@ -50,7 +50,7 @@ function appendUserToTable(user) {
     addCell(1, rowRef, user.lastname);
     addCell(2, rowRef, user.email);
     addCell(3, rowRef, user.phone);
-    addCell(4, rowRef, '📃');
+    addCell(4, rowRef, '📃').onclick = () => handleOnView(user.id);
     addCell(5, rowRef, '✏').onclick = () => handleOnEdit(user.id);
     addCell(6, rowRef, '❌').onclick = () => deleteUser(user.id);
 }
@@ -102,3 +102,6 @@ async function handleOnEdit(userId) {
     }
 }
 
+function handleOnView(userId) {
+    window.location.href = `./view/viewUser.html?id=${userId}`
+}
