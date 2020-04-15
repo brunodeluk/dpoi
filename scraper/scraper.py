@@ -1,7 +1,7 @@
 import requests
 import json
 
-# given a url, it outputs a JSON-LD
+# given an url, it outputs a JSON-LD
 
 def to_jsonld(url):
   html = requests.get(url, {}, verify=False).text
