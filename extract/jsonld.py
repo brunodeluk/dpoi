@@ -22,3 +22,4 @@ class JsonLdExtractor:
             json_ld_object = json.loads(raw_json_ld)
             collector.append(json_ld_object)
             return self._extract_items_rec(html_string, collector, end_index)
+        return collector
