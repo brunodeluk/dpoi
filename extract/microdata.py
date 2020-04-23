@@ -12,7 +12,7 @@ class MicrodataExtractor:
         html = parse_html(html_string)
         root = html.find_all(itemscope=True, itemprop=False)
         if not root:
-            return {}
+            return []
 
         items = []
         for node in root:
@@ -23,7 +23,7 @@ class MicrodataExtractor:
     def tojsonld(self, root, url='', memory = []):
         memory.append(root)
         item = {}
-        self._add_thing_properties(item, root, url)
+        self._add_thing_properties(item, root)
         self._extract_props(item, root, memory)
         return item
         
@@ -95,7 +95,7 @@ class MicrodataExtractor:
 
         return value
 
-    def _add_thing_properties(self, jsonld, root, url):
+    def _add_thing_properties(self, jsonld, root):
         _id = str(uuid.uuid4())
         _type = root.get('itemtype')
 
