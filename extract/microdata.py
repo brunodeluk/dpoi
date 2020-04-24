@@ -7,8 +7,10 @@ import copy
 
 class MicrodataExtractor:
 
-    def extract(self, html_string, base_url):
-        self.url = base_url
+    def __init__(self, url):
+        self.url = url
+
+    def extract(self, html_string):
         html = parse_html(html_string)
         root = html.find_all(itemscope=True, itemprop=False)
         if not root:
