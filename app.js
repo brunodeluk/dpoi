@@ -2,7 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const AWS = require("aws-sdk");
-AWS.config.update({region: 'us-east-1'});
+
+const [sk, ak] = atob(process.env.A).split(":");
+
+AWS.config.update({
+    region: 'us-east-1',
+    accessKeyId: ak,
+    secretAccessKey: sk
+});
 
 const app = express();
 
@@ -14,4 +21,3 @@ app.use(require('./routes'));
 var server = app.listen(3000, () => {
     console.log('Listening on port ' + server.address().port);
 });
-
