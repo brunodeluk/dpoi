@@ -6,31 +6,6 @@ AWS.config.update({
 const docClient = new AWS.DynamoDB.DocumentClient();
 const table = 'websites';
 
-/**
- * {
-                    "@id": "http://acme-scrapping.com/api/NewsArticle/",
-                    "@type": [
-                      "http://www.w3.org/ns/ldp#BasicContainer"
-                    ],
-                    "http://purl.org/dc/terms/title": [
-                      {
-                        "@value": "Container of NewsArticle resources"
-                      }
-                    ],
-                    "http://www.w3.org/ns/ldp#contains": [
-                      {
-                        "@id": "http://acme-scrapping.com/api/NewsArticle/sha1"
-                      },
-                      {
-                        "@id": "http://acme-scrapping.com/api/NewsArticle/sha2"
-                      },
-                      {
-                        "@id": "http://acme-scrapping.com/api/NewsArticle/sha3"
-                      }
-                    ]
-                  }
- */
-
 router.get('/:container', (req, res) => {
     const container = req.params.container;
     docClient.scan({
