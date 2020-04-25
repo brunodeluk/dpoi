@@ -1,8 +1,7 @@
 from utils.utils import parse_html
 from bs4 import Tag 
 import json
-from uuid import uuid4 
-import copy
+from uuid import uuid4
 
 class MicrodataExtractor:
 
