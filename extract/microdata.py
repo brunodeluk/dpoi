@@ -1,8 +1,8 @@
 from utils.utils import parse_html
 import lxml.html as lhtml
-import bs4
+from bs4 import Tag 
 import json
-import uuid
+from uuid import uuid4 
 import copy
 
 class MicrodataExtractor:
@@ -50,7 +50,7 @@ class MicrodataExtractor:
     def _extract_propertynodes(self, node, memory):
         propertynodes = []
 
-        if not isinstance(node, bs4.Tag):
+        if not isinstance(node, Tag):
             return propertynodes
         
         if node.get('itemprop'):
@@ -98,11 +98,11 @@ class MicrodataExtractor:
         return value
 
     def _add_thing_properties(self, jsonld, root):
-        _id = str(uuid.uuid4())
-        _type = root.get('itemtype')
+        _id = str(uuid4())
+        _type = root.get('itemtype').replace('https://schema.org/', '')
 
         if _type == None:
-            _type = "http://schema.org/Thing"
+            _type = "Thing"
         
         jsonld["@context"] = "http://schema.org"
         jsonld['@id'] = _id
