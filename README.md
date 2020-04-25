@@ -1,4 +1,4 @@
-# JSON-LD Scraper
+# JSON-LD Scraper Api
 
 A simple function that takes a URL and returns its JSON-LD
 
