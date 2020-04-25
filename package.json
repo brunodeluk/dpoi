@@ -4,6 +4,7 @@
   "description": "JSON-LD Scraper API",
   "main": "app.js",
   "scripts": {
+    "start:prod": "node ./app.js --production",
     "start": "node ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
