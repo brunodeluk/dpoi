@@ -1,83 +1,56 @@
-# Web Scraper
+# JSON-LD Scraper
 
-Esta es una implementación de una funcion que retorna datos estructurados de una pagine web
+A simple function that takes a URL and returns its JSON-LD
+
+It currenty supports:
+
+- Embedded JSON-LD
+- W3C's HTML Microdata
+
+In the future it will support:
+- OpenGraph
+- Twitter Card Markup
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 
-
+- [Python](https://www.python.org/) (3.6 or later)
+- [Requests](https://requests.readthedocs.io/en/master/)
+- [BeautifulSoup 4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Start by installing all the required dependencies
 
 ```
-Give the example
+pip install requests
 ```
 
-And repeat
+```
+ pip install beautifulsoup4
+```
+
+Then you can try it in your terminal by running the main function and passing a url as argument
 
 ```
-until finished
+ python __main__.py https://www.ebay.com/itm/173843444113
 ```
+
+It will return an array with all the Schemas found on the given website
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+### Usage
 
 ```
-Give an example
+result = JsonLd().fromUrl("https://www.ebay.com/itm/173843444113")
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* **Bruno De Luca**
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* This project was part of as an assignment from the course DPOI
