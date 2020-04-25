@@ -1,4 +1,3 @@
-from lxml import etree
 from uuid import uuid4 
 import json
 import re

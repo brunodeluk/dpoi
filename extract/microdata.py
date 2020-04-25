@@ -1,5 +1,4 @@
 from utils.utils import parse_html
-import lxml.html as lhtml
 from bs4 import Tag 
 import json
 from uuid import uuid4 
