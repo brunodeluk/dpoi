@@ -39,8 +39,6 @@ Then you can try it in your terminal by running the main function and passing a 
 
 It will return an array with all the Schemas found on the given website
 
-End with an example of getting some data out of the system or using it for a little demo
-
 ### Usage
 
 ```
