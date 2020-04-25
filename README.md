@@ -1,48 +1,45 @@
 # JSON-LD Scraper Api
 
-A simple function that takes a URL and returns its JSON-LD
+Methods exposed:
 
-It currenty supports:
+- /:container
 
-- Embedded JSON-LD
-- W3C's HTML Microdata
+Returns all conainer resources
 
-In the future it will support:
-- OpenGraph
-- Twitter Card Markup
+- /:container/:resource
+
+Returns specific resource 
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Python](https://www.python.org/) (3.6 or later)
-- [Requests](https://requests.readthedocs.io/en/master/)
-- [BeautifulSoup 4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Docker](https://nodejs.org/es/)
 
 ### Installing
 
-Start by installing all the required dependencies
+Pull the image from Dockerhub
 
 ```
-pip install requests
+docker pull brunodeluk/jsonldscraper:1.0.1
 ```
 
-```
- pip install beautifulsoup4
-```
-
-Then you can try it in your terminal by running the main function and passing a url as argument
+Run the image
 
 ```
- python __main__.py https://www.ebay.com/itm/173843444113
+docker run -p 3000:3000 -it brunodeluk/jsonldscraper:1.0.1
 ```
 
-It will return an array with all the Schemas found on the given website
-
-### Usage
+Then go to:
 
 ```
-result = JsonLd().fromUrl("https://www.ebay.com/itm/173843444113")
+http://localhost:3000/api
+```
+
+If you are using docker for windows, you have to use the IP of the virtual machine which you can get by running:
+
+```
+docker-image ip default
 ```
 
 ## Authors
