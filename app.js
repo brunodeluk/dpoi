@@ -8,7 +8,6 @@ AWS.config.getCredentials(function(err) {
     if (err) console.log(err.stack);
 });
 
-
 const app = express();
 
 app.use(cors());
