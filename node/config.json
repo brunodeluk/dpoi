@@ -1,0 +1,8 @@
+{
+    "production": {
+        "baseUrl": "https://76qbahw4n7.execute-api.us-east-1.amazonaws.com/v1"
+    },
+    "development": {
+        "baseUrl": "https://76qbahw4n7.execute-api.us-east-1.amazonaws.com/v1"
+    }
+}

@@ -1,4 +1,5 @@
 const AWS = require('aws-sdk');
+const { baseUrl } = require('../config.json').production;
 const ddb = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = (event, context, callback) => {
@@ -26,7 +27,7 @@ exports.handler = (event, context, callback) => {
             const types = Object.keys(result);
 
             const response = {
-                "@id": `https://76qbahw4n7.execute-api.us-east-1.amazonaws.com/v1/scraps/`,
+                "@id": `${baseUrl}/scraps/`,
                 "@type": [
                     "http://www.w3.org/ns/ldp#BasicContainer"
                 ],
@@ -35,7 +36,7 @@ exports.handler = (event, context, callback) => {
                     "@value": `Container of all available schema types`
                     }
                 ],
-                "http://www.w3.org/ns/ldp#contains": types.map(type => `https://76qbahw4n7.execute-api.us-east-1.amazonaws.com/v1/${type}/`)
+                "http://www.w3.org/ns/ldp#contains": types.map(type => `${baseUrl}/${type}/`)
             };
 
             callback(null, response);

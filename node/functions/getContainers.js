@@ -1,4 +1,5 @@
 const AWS = require('aws-sdk');
+const { baseUrl } = require('../config.json').production;
 const ddb = new AWS.DynamoDB.DocumentClient();
 
 /**
@@ -25,7 +26,7 @@ exports.handler = (event, context, callback) => {
         }
         else {
             const response = {
-                "@id": `http://localhost:3000/api/${container}/`,
+                "@id": `${baseUrl}/${container}/`,
                 "@type": [
                     "http://www.w3.org/ns/ldp#BasicContainer"
                 ],
@@ -34,7 +35,7 @@ exports.handler = (event, context, callback) => {
                     "@value": `Container of ${container} resources`
                     }
                 ],
-                "http://www.w3.org/ns/ldp#contains": data.Items.map(d => `http://localhost:3000/api/${container}/${d['@id']}`)
+                "http://www.w3.org/ns/ldp#contains": data.Items.map(d => `${baseUrl}/${container}/${d['@id']}`)
             }
             console.log('GET /%s OK', container);
             callback(null, response);

@@ -19,7 +19,7 @@ exports.handler = (event, context, callback) => {
             callback(err, null);
         }
         else {
-            callback(null, data.Item);
+            callback(null, JSON.parse(JSON.stringify(data.Item)));
         }
     });
 };
