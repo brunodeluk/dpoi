@@ -30,27 +30,31 @@ En el futuro va a poder soportar:
 - OpenGraph
 
 EJemplos de páginas para probar:
+
 https://mercadolibre.com (json-ld)
+
 https://ebay.com (Microdata)
+
 https://garbarino.com (json-ld)
+
 https://imdb.com (json-ld)
 
+
 **POST /scraps**
+
 Realiza un scrapping de la url dada.
 
 **GET /:container**
+
 Lista scraps del container dado.
 
 **GET /:container/:resource**
+
 Retorna un rescurso
 
 ## Authors
 
-  
-
 *  **Bruno De Luca**
-
-  
 
 ## Acknowledgments
 
