@@ -1,54 +1,59 @@
-# JSON-LD Scraper
+# JSON-LD Scraper Serverless
 
-A simple function that takes a URL and returns its JSON-LD
+  
 
-It currenty supports:
+Am AWS Lambda implementation of the JSON-LD Scraper
 
-- Embedded JSON-LD
-- W3C's HTML Microdata
+```
 
-In the future it will support:
+https://76qbahw4n7.execute-api.us-east-1.amazonaws.com/v1/scraps
+
+```
+Enpoints: 
+
+- /scraps
+	- GET
+	- POST
+- /:container
+	- GET
+- /:container/:resource
+	- GET
+
+**GET /scraps**
+Listar scraps de la aplicación.
+
+Actualmente soporta:
+- JSON-lD
+- W3 Microdata
+
+En el futuro va a poder soportar:
 - OpenGraph
-- Twitter Card Markup
 
-## Getting Started
+EJemplos de páginas para probar:
+https://mercadolibre.com (json-ld)
+https://ebay.com (Microdata)
+https://garbarino.com (json-ld)
+https://imdb.com (json-ld)
 
-### Prerequisites
+**POST /scraps**
+Realiza un scrapping de la url dada.
 
-- [Python](https://www.python.org/) (3.6 or later)
-- [Requests](https://requests.readthedocs.io/en/master/)
-- [BeautifulSoup 4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+**GET /:container**
+Lista scraps del container dado.
 
-### Installing
-
-Start by installing all the required dependencies
-
-```
-pip install requests
-```
-
-```
- pip install beautifulsoup4
-```
-
-Then you can try it in your terminal by running the main function and passing a url as argument
-
-```
- python __main__.py https://www.ebay.com/itm/173843444113
-```
-
-It will return an array with all the Schemas found on the given website
-
-### Usage
-
-```
-result = JsonLd().fromUrl("https://www.ebay.com/itm/173843444113")
-```
+**GET /:container/:resource**
+Retorna un rescurso
 
 ## Authors
 
-* **Bruno De Luca**
+  
+
+*  **Bruno De Luca**
+
+  
 
 ## Acknowledgments
+
+  
 
 * This project was part of as an assignment from the course DPOI
