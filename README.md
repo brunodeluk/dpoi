@@ -14,7 +14,7 @@ Returns specific resource
 
 ### Prerequisites
 
-- [Docker](https://nodejs.org/es/)
+- [Docker](https://www.docker.com)
 
 ### Installing
 
