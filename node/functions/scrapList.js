@@ -1,9 +1,10 @@
 const AWS = require('aws-sdk');
+AWS.config.update({region: 'us-east-1'});
 const ddb = new AWS.DynamoDB.DocumentClient();
 
-exports.handler = (event, context, callback) => {
+const list = (event, context, callback) => {
     const params = {
-        TableName: process.env.TABLE_NAME,
+        TableName: 'websites',
         ProjectionExpression: '#tp',
         ExpressionAttributeNames: {
             "#tp": "@type",
@@ -18,8 +19,8 @@ exports.handler = (event, context, callback) => {
         else {
             const result = {};
             data.Items.forEach(item => {
-                if (!result[item]) {
-                    result[item] = 1
+                if (!result[item['@type']]) {
+                    result[item['@type']] = 1
                 }
             });
 
@@ -42,3 +43,8 @@ exports.handler = (event, context, callback) => {
         }
     });
 };
+
+list(null, null, (err, result) => {
+    if (err) console.error(err);
+    else console.log('result', result);
+})
