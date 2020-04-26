@@ -6,7 +6,7 @@ const ddb = new AWS.DynamoDB.DocumentClient();
  */
 
 exports.handler = (event, context, callback) => {
-    const { resource } = event.pathParameters;
+    const resource = event['resource'];
     ddb.get({
         TableName: process.env.TABLE_NAME,
         Key: {

@@ -6,7 +6,7 @@ const ddb = new AWS.DynamoDB.DocumentClient();
  */
 
 exports.handler = (event, context, callback) => {
-    const { container } = event.pathParameters;
+    const container = event['container'];
     ddb.scan({
         TableName: process.env.TABLE_NAME,
         ProjectionExpression: '#id',

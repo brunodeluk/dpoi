@@ -26,7 +26,7 @@ exports.handler = (event, context, callback) => {
             const types = Object.keys(result);
 
             const response = {
-                "@id": `https://76qbahw4n7.execute-api.us-east-1.amazonaws.com/v1/${container}/`,
+                "@id": `https://76qbahw4n7.execute-api.us-east-1.amazonaws.com/v1/scraps/`,
                 "@type": [
                     "http://www.w3.org/ns/ldp#BasicContainer"
                 ],
