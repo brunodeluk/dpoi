@@ -7,6 +7,7 @@ const ddb = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = (event, context, callback) => {
     const resource = event['resource'];
+    const container = event['container'];
     ddb.get({
         TableName: process.env.TABLE_NAME,
         Key: {
@@ -18,7 +19,6 @@ exports.handler = (event, context, callback) => {
             callback(err, null);
         }
         else {
-            logger.info('GET /%s/%s OK', resource);
             callback(null, data.Item);
         }
     });
