@@ -17,7 +17,7 @@ info:
   title: Scraping API
   version: '1.0'
 host: 76qbahw4n7.execute-api.us-east-1.amazonaws.com
-basePath: /api
+basePath: /v1
 schemes:
   - https
 paths:
